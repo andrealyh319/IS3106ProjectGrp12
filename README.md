@@ -85,19 +85,29 @@ After cloning, please run the following command to download the required React d
 To run the project on the frontend, run ```npm start``` in the project directory. 
 
 ### Backend
-To run the project on the backend, open the project in NetBeans, then create a MySQL database named ‘PetSocietyDB’. Remember to select ‘mysql.sys@localhost’.
+1. To run the project on the backend, open the project in NetBeans, then create a MySQL database named ‘PetSocietyDB’. Remember to select ‘mysql.sys@localhost’.
 
-Afterwards, start GlassFish Server 5.1.0.
+2. Afterwards, start GlassFish Server 5.1.0.
 
-Go back into Projects folder, right-click ‘PetSociety’. Select clean and build, then run.
+3. Go back into Projects folder, right-click ‘PetSociety’. Select clean and build, then run.
 
 ## Admin Portal
-### Web Access
-https://andrealyh319.github.io/IS3106ProjectGrp12/staffPortal
 
 Add the PrimeFaces 10.0 library to your IDE (https://www.primefaces.org/downloads/)
 
 Change the ```img.path``` property in ```config.properties``` to ```[PROJECT_BASE_DIRECTORY]/PetSociety-war/web/img```. ```config.properties``` can be found in ```[PROJECT_BASE_DIRECTORY]/PetSociety-war/web```.
+
+### Running the Admin Portal
+
+Web access for the Admin Portal is not available and can only be ran on your local GlassFish server. 
+
+1. To run the project, open the project in NetBeans, then create a MySQL database named ‘PetSocietyDB’. Remember to select ‘mysql.sys@localhost’.
+
+2. Afterwards, start GlassFish Server 5.1.0.
+
+3. Go back into Projects folder, right-click ‘PetSociety’. Select clean and build, then run.
+
+If you have done steps 1-3 while running the backend for the Customer Portal, you do not have to repeat the steps. You would have been directed to the Admin Portal
 
 # Tech stack
 ## Customer Portal:
