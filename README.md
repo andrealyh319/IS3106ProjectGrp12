@@ -71,8 +71,12 @@ Staff can also manually enable/disable users before their ‘ban period’ is co
 
 
 # Setup Instructions
+## Web Access (Customer Portal)
+https://andrealyh319.github.io/IS3106ProjectGrp12
+See how to tie backend in 'Backend' section below.
+
 ## Customer Portal
-Clone down this repository. You will need npm installed globally on your machine.
+Clone this repository. You will need npm installed globally on your machine.
 After cloning, please run the following command to download the required React dependencies from ```package.json```.
 ```npm install```
 
