@@ -31,13 +31,12 @@ function Navbar(props) {
   let navigate = useNavigate();
 
   function handleLogout() {
-    localStorage.removeItem("user")
-    localStorage.removeItem("user_role")
+    localStorage.removeItem("user");
+    localStorage.removeItem("user_role");
     window.location.reload(false);
   }
 
   function links() {
-    console.log(userRole);
     if (userRole === "parent") {
       return (
         <MDBCollapse navbar show={showNavbar}>

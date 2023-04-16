@@ -21,7 +21,7 @@ import AllSitters from './containers/AllSitters';
 
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState("");
   const [userRole, setUserRole] = useState("");
 
   useEffect(() => {
@@ -36,6 +36,7 @@ function App() {
     // localStorage.removeItem('user_role')
 
     window.addEventListener('storage', handleStorage())
+    console.log("USER: " + user)
     return () => window.removeEventListener('storage', handleStorage())
   }, [])
 
@@ -44,7 +45,7 @@ function App() {
       <Navbar user={user}></Navbar>
       <div className='container'>
         <Routes>
-          <Route exact path="/" element= {user === {} ? <Homepage /> : <LoggedInHomepage />} />
+          <Route exact path="/" element= {user === "" ? <Homepage /> : <LoggedInHomepage /> } />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/signUp/:page" element={<SignUp />} />
           <Route path="/bookings"
