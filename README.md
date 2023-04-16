@@ -110,7 +110,7 @@ Web access for the Admin Portal is not available and can only be ran on your loc
 
 If you have done steps 1-3 while running the backend for the Customer Portal, you do not have to repeat the steps. You would have been directed to the Admin Portal.
 
-![Admin Portal Login](https://www.dropbox.com/s/dmzj16cgereikig/staffPortalLogin.png?dl=0)
+![Admin Portal Login](https://ibb.co/KrV8P9V)
 
 # Tech stack
 ## Customer Portal:
