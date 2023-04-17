@@ -40,23 +40,22 @@ function SearchSitter(props) {
         numOfTimes: null,
     });
 
-
-    const [userId, setUserId] = useState(JSON.parse(localStorage.getItem("user")).userId);
+    const [userId, setUserId] = useState(null);
     useEffect(() => {
         const handleStorage = () => {
-            setUserId(JSON.parse(localStorage.getItem("user")).userId);
-            if (!userId) {
-                setFormData(prevState => ({
-                    ...prevState,
-                    userId: userId
-                }));
-            }
+            if (JSON.parse(localStorage.getItem('user') === null)) {
+                setUserId(JSON.parse(localStorage.getItem("user")).userId);
+                if (!userId) {
+                    setFormData(prevState => ({
+                        ...prevState,
+                        userId: userId
+                    }));
+                }
+            };
         };
         window.addEventListener('storage', handleStorage); // pass handleStorage as a callback
         return () => window.removeEventListener('storage', handleStorage);
     }, []);
-
-
 
     //SearchResult will only show when they user clicks the search button
     const [showResults, setShowResults] = useState(false);
