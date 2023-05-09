@@ -71,24 +71,25 @@ Staff can also manually enable/disable users before their ‘ban period’ is co
 
 
 # Setup Instructions
-## Web Access (Customer Portal)
+
+## Customer Portal
+### Web Access
 https://andrealyh319.github.io/IS3106ProjectGrp12
 See how to tie backend in 'Backend' section below.
 
-## Customer Portal
+### Frontend
 Clone this repository. You will need npm installed globally on your machine.
 After cloning, please run the following command to download the required React dependencies from ```package.json```.
 ```npm install```
 
-### Frontend
 To run the project on the frontend, run ```npm start``` in the project directory. 
 
 ### Backend
-To run the project on the backend, open the project in NetBeans, then create a MySQL database named ‘PetSocietyDB’. Remember to select ‘mysql.sys@localhost’.
+1. To run the project on the backend, open the project in NetBeans, then create a MySQL database named ‘PetSocietyDB’. Remember to select ‘mysql.sys@localhost’.
 
-Afterwards, start GlassFish Server 5.1.0.
+2. Afterwards, start GlassFish Server 5.1.0.
 
-Go back into Projects folder, right-click ‘PetSociety’. Select clean and build, then run.
+3. Go back into Projects folder, right-click ‘PetSociety’. Select clean and build, then run.
 
 ## Admin Portal
 
@@ -125,3 +126,6 @@ Backend: MySQL, JavaEE
 
 # Collaborators 
 [andrealyh319](https://github.com/andrealyh319) [callyanne](https://github.com/callyanne) [rrachelangrq](https://github.com/rrachelangrq)
+
+# Current Deployment Branch
+master
