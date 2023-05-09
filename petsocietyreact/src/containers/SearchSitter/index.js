@@ -9,7 +9,7 @@ import moment from 'moment-timezone';
 import "react-datepicker/dist/react-datepicker.css";
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import SearchResults from "../../components/SearchResults";
+import SearchResults from "../../components/Search/SearchResults";
 import Api from "../../helpers/Api";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import $ from 'jquery';

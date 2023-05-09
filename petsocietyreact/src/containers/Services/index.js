@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'reactstrap';
 import { MDBCol, MDBRow, MDBTypography, MDBBtn } from 'mdb-react-ui-kit';
 import { Link, Route, Routes } from 'react-router-dom';
-import Footer from '../../components/Footer';
+import Footer from '../../components/Components/Footer';
 import ServiceCard from '../../components/Services/ServiceCard';
 import serviceBanner from '../../icons/services_banner.png';
 import { position } from 'dom-helpers';

@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import Api from "../../helpers/Api";
 import NoRequestsPage from "../../components/NoRequestsPage";
 import { Button, Badge } from "react-bootstrap";
-import RequestModal from "../../components/BookingModals"
-import MgModal from "../../components/MgModals";
+import RequestModal from "../../components/Bookings/BookingModals"
+import MgModal from "../../components/MeetAndGreet/MgModals";
 import titleIcon from "./mgTitle.jpeg"
 import moment from "moment-timezone";
 import ContactModal from "../../components/ContactDetailsModal";

@@ -4,7 +4,7 @@ import "./styles.css"
 import logo from "./assets/dog_logo.png"
 import { Link } from "react-router-dom";
 import { MDBCollapse, MDBContainer, MDBNavbar, MDBNavbarItem, MDBNavbarNav, MDBNavbarToggler, MDBNavbarLink } from "mdb-react-ui-kit";
-import hamburgerMenu from '../../icons/hamburger_menu.png';
+import hamburgerMenu from '../../../icons/hamburger_menu.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faBell } from '@fortawesome/free-solid-svg-icons'
 

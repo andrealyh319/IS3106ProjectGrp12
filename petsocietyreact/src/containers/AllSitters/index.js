@@ -5,7 +5,7 @@ import { MDBCard, MDBTypography, MDBContainer, MDBCardBody, MDBCardTitle, MDBCar
 import sitterList from "../../icons/sitter_list.png";
 import sitterListBg from "../../icons/sitter_list_bg.png";
 import { Link } from 'react-router-dom';
-import MgModal from '../../components/MgModals';
+import MgModal from '../../components/MeetAndGreet/MgModals';
 import { ButtonGroup } from 'reactstrap';
 
 

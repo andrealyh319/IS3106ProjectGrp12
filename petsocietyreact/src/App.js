@@ -1,8 +1,8 @@
 import './App.css';
 import { Routes, Route, Navigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import NoLoginNavbar from './components/NoLoginNavbar';
-import Navbar from './components/Navbar'
+import NoLoginNavbar from './components/Components/NoLoginNavbar';
+import Navbar from './components/Components/Navbar'
 import SearchSitter from "./containers/SearchSitter";
 import Services from "./containers/Services";
 import SignUp from './containers/SignUp';
@@ -15,7 +15,7 @@ import LoggedInHomepage from './containers/LoggedInHomepage';
 import CreatePet from './containers/CreatePet';
 import Profile from './containers/Profile';
 import Homepage from './containers/Homepage';
-import Footer from './components/Footer';
+import Footer from './components/Components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
 import AllSitters from './containers/AllSitters';
 

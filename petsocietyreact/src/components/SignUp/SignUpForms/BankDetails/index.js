@@ -10,7 +10,7 @@ import {
     MDBCard
   }
   from 'mdb-react-ui-kit';
-  import dogBanner from '../../../icons/dog_banner.png';
+  import dogBanner from '../../../../icons/dog_banner.png';
 
 
 function BankDetails(props) {

@@ -17,7 +17,7 @@ import {
   MDBDropdownItem,
   MDBCollapse
 } from "mdb-react-ui-kit";
-import hamburgerMenu from '../../icons/hamburger_menu.png';
+import hamburgerMenu from '../../../icons/hamburger_menu.png';
 
 function NoLoginNavbar() {
   const [showNoLoginNavbar, setShowNoLoginNavbar] = useState(false);
