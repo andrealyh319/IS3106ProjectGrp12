@@ -6,7 +6,7 @@ import "./style.css";
 import swal from 'sweetalert';
 import Api from "../../helpers/Api";
 import loginBanner from "../../icons/login_banner.png"
-import Footer from '../../components/Footer';
+import Footer from '../../components/Components/Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

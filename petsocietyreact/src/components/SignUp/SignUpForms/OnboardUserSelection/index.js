@@ -14,8 +14,8 @@ import {
     MDBRadio
 }
     from 'mdb-react-ui-kit';
-import ppPicture from '../../../icons/petparent.png';
-import psPicture from '../../../icons/petsitter.png';
+import ppPicture from '../../../../icons/petparent.png';
+import psPicture from '../../../../icons/petsitter.png';
 
 function OnboardUserSelection(props) {
   

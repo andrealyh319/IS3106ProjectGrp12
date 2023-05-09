@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Button, CardTitle, ListGroupItem, ListGroup, CardText, Card, CardBody, CardGroup, CardImg, ButtonGroup, Alert } from "reactstrap";
-import Api from "../../helpers/Api";
+import Api from "../../../helpers/Api";
 import './style.css';
 import Rating from 'react-rating-stars-component';
 import { Link } from "react-router-dom";
-import MgModal from "../../components/MgModals";
-import SearchSitter from "../../containers/SearchSitter";
+import MgModal from "../../MeetAndGreet/MgModals";
+import SearchSitter from "../../../containers/SearchSitter";
 import { faL } from "@fortawesome/free-solid-svg-icons";
 import { useQuery } from "react-query";
 

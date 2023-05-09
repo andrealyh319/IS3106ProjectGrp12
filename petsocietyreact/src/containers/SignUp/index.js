@@ -25,28 +25,17 @@ import 'react-day-picker/dist/style.css';
 import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons';
-import Footer from '../../components/Footer';
 
 import '../../loading.css';
-import GeneralDetails from '../../components/SignUpForms/GeneralDetails';
-import BankDetails from '../../components/SignUpForms/BankDetails';
-import OnboardUserSelection from '../../components/SignUpForms/OnboardUserSelection';
+import GeneralDetails from '../../components/SignUp/SignUpForms/GeneralDetails';
+import BankDetails from '../../components/SignUp/SignUpForms/BankDetails';
+import OnboardUserSelection from '../../components/SignUp/SignUpForms/OnboardUserSelection';
 
 
 function SignUp(props) {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { page } = useParams();
-
-  const redirect3 = () => {
-    let path = '/SignUp/3';
-    navigate(path);
-  }
-
-  const redirect4 = () => {
-    let path = `/SignUp/Sitter`;
-    navigate(path);
-  }
 
   const redirect5 = () => {
     let path = `/SignUp/ExpForm`;
