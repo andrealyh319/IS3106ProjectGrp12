@@ -1,12 +1,12 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
-import "./styles.js";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'reactstrap';
 import { MDBCol, MDBRow, MDBTypography, MDBBtn } from 'mdb-react-ui-kit';
 import { Link, Route, Routes } from 'react-router-dom';
 import Footer from '../../components/Footer';
-import ServiceCard from '../../components/ServiceCard/index.js';
+import ServiceCard from '../../components/Services/ServiceCard';
 import serviceBanner from '../../icons/services_banner.png';
 import { position } from 'dom-helpers';
 

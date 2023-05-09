@@ -25,7 +25,7 @@ function Footer() {
             width="25"
             height="25" />
           </MDBBtn>
-          <MDBBtn href="#" color="light" className="m-1 p-3">  
+          <MDBBtn href="https://github.com/andrealyh319/IS3106ProjectGrp12" color="light" className="m-1 p-3">  
           <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
             width="25"
             height="25" />

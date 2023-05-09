@@ -26,21 +26,17 @@ import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../../components/Footer';
-import dogBanner from '../../icons/dog_banner.png';
-import ppPicture from '../../icons/petparent.png';
-import psPicture from '../../icons/petsitter.png';
+
 import '../../loading.css';
+import GeneralDetails from '../../components/SignUpForms/GeneralDetails';
+import BankDetails from '../../components/SignUpForms/BankDetails';
+import OnboardUserSelection from '../../components/SignUpForms/OnboardUserSelection';
 
 
 function SignUp(props) {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { page } = useParams();
-
-  const redirect2 = () => {
-    let path = `/SignUp/2`;
-    navigate(path);
-  }
 
   const redirect3 = () => {
     let path = '/SignUp/3';
@@ -208,22 +204,22 @@ function SignUp(props) {
   const [bookings, setBookings] = useState([]);
 
   const petParent = {
-      firstName: firstName,
-      lastName: lastName,
-      username: username,
-      contactNum: contactNum,
-      email: email,
-      password: password,
-      age: age,
-      emergencyContact: emergencyContact,
-      profilePicture: profilePicture,
-      billingAddress: billingAddress,
-      bankAcc: bankAcc,
-      cc: cc,
-      searches: searches,
-      mgRequests: mgRequests,
-      bookings: bookings,
-      daysDisabled: 0,
+    firstName: firstName,
+    lastName: lastName,
+    username: username,
+    contactNum: contactNum,
+    email: email,
+    password: password,
+    age: age,
+    emergencyContact: emergencyContact,
+    profilePicture: profilePicture,
+    billingAddress: billingAddress,
+    bankAcc: bankAcc,
+    cc: cc,
+    searches: searches,
+    mgRequests: mgRequests,
+    bookings: bookings,
+    daysDisabled: 0,
   };
 
   // creation of petparent
@@ -237,8 +233,8 @@ function SignUp(props) {
       .then((data) => {
         navigate("/CreatePet");
       })
-      setTimeout(() => {
-        setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
     }, 3000);
   }
 
@@ -401,194 +397,29 @@ function SignUp(props) {
   if (page === "1") {
     return (
       <>
-        <div style={{ margin: '20px' }}>
-          <MDBTypography tag='div' className='h1 pt-5 text-center'>
-            <FontAwesomeIcon icon={faDog} /> <b>Sign Up For PetSociety</b> <FontAwesomeIcon icon={faCat} />
-          </MDBTypography>
-        </div>
-
-
-        <form onSubmit={handleCompleteUserCreation}>
-          <MDBContainer fluid className='h-custom'>
-
-            <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-              <MDBCol col='12' className='m-5'>
-                <MDBCard>
-
-                  <MDBCardBody className='p-0'>
-
-                    <MDBRow>
-
-                      <MDBCol md='6' className='p-5 bg-gray rounded-start'>
-
-                        <h3 className="fw-bold mb-5" style={{ color: '#7B69A9' }}>General Information</h3>
-
-                        <MDBRow>
-
-                          <MDBCol md='6'>
-                            <MDBInput wrapperClass='mb-4'
-                              label='First Name'
-                              size='lg'
-                              id='inputFirstName'
-                              type='text'
-                              value={firstName}
-                              onChange={(e) => setFirstName(e.target.value)} />
-                          </MDBCol>
-
-                          <MDBCol md='6'>
-                            <MDBInput wrapperClass='mb-4'
-                              label='Last Name'
-                              size='lg'
-                              id='inputLastName'
-                              type='text'
-                              value={lastName}
-                              onChange={(e) => setLastName(e.target.value)} />
-                          </MDBCol>
-
-                        </MDBRow>
-
-
-                        <MDBInput wrapperClass='mb-4'
-                          label='Username'
-                          size='lg'
-                          id='inputUsername'
-                          type='text'
-                          value={username}
-                          onChange={(e) => setUsername(e.target.value)} />
-
-
-                        <MDBRow>
-
-                          <MDBCol md='3'>
-                            <MDBInput wrapperClass='mb-3'
-                              label='Age'
-                              size='lg'
-                              id='inputAge'
-                              type='number'
-                              value={age}
-                              onChange={(e) => setAge(e.target.value)} />
-                          </MDBCol>
-
-                          <MDBCol md='6'>
-
-                          </MDBCol>
-
-                        </MDBRow>
-
-                        <MDBRow>
-                          <MDBCol md='12'>
-                            <label className="form-label" htmlFor="customFile">Profile Picture</label>
-                            <input type="file"
-                              className="form-control"
-                              id="customFile"
-                              value={profilePicture}
-                              onChange={(e) => setProfilePicture(e.target.value)} />
-                          </MDBCol>
-                        </MDBRow>
-
-                      </MDBCol>
-
-
-                      <MDBCol md='6' className='p-5 rounded-end' style={{ backgroundColor: '#7B69A9' }}>
-
-                        <h3 className="fw-bold mb-5 text-white" style={{ color: '#4835d4' }}>Contact Details</h3>
-                        <MDBInput wrapperClass='mb-4'
-                          labelClass='text-white'
-                          label='Email'
-                          size='lg'
-                          id='inputEmail'
-                          type='text'
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)} />
-
-                        <MDBInput wrapperClass='mb-4'
-                          labelClass='text-white'
-                          label='Password'
-                          size='lg'
-                          id='inputPassword'
-                          type='password'
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)} />
-
-
-                        <MDBRow>
-
-                          <MDBCol md='5'>
-                            <MDBInput wrapperClass='mb-4'
-                              labelClass='text-white'
-                              label='Code +'
-                              size='lg'
-                              id='form9'
-                              type='text' />
-                          </MDBCol>
-
-                          <MDBCol md='7'>
-                            <MDBInput wrapperClass='mb-4'
-                              labelClass='text-white'
-                              label='Phone Number'
-                              size='lg'
-                              id='inputContactNum'
-                              type='text'
-                              value={contactNum}
-                              onChange={(e) => setContactNum(e.target.value)} />
-                          </MDBCol>
-                        </MDBRow>
-
-                        <MDBRow>
-
-                          <MDBCol md='5'>
-                            <MDBInput wrapperClass='mb-4'
-                              labelClass='text-white'
-                              label='Code +'
-                              size='lg'
-                              type='text' />
-                          </MDBCol>
-
-                          <MDBCol md='7'>
-                            <MDBInput wrapperClass='mb-4'
-                              labelClass='text-white'
-                              label='Emergency Contact'
-                              size='lg'
-                              id='inputEmergencyContact'
-                              type='text'
-                              value={emergencyContact}
-                              onChange={(e) => setEmergencyContact(e.target.value)} />
-                          </MDBCol>
-                        </MDBRow>
-
-
-                        <MDBInput wrapperClass='mb-4'
-                          labelClass='text-white'
-                          label='Billing Address'
-                          size='lg'
-                          id='inputBillingAddress'
-                          type='text'
-                          value={billingAddress}
-                          onChange={(e) => setBillingAddress(e.target.value)} />
-
-
-                        <MDBCheckbox name='flexCheck' id='flexCheckDefault' labelClass='text-white mb-4' label='I do accept the Terms and Conditions of PetSociety.' />
-
-                        <MDBBtn color='light'
-                          size='lg'
-                          type="submit"
-                          onClick={redirect2}
-                        >
-                          Next
-                        </MDBBtn>
-
-                      </MDBCol>
-                    </MDBRow>
-
-                  </MDBCardBody>
-                </MDBCard>
-
-              </MDBCol>
-            </MDBRow>
-
-          </MDBContainer>
-          <Footer />
-        </form>
+        <GeneralDetails
+          firstName={firstName}
+          setFirstName={setFirstName}
+          lastName={lastName}
+          setLastName={setLastName}
+          username={username}
+          setUsername={setUsername}
+          contactNum={contactNum}
+          setContactNum={setContactNum}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          age={age}
+          setAge={setAge}
+          emergencyContact={emergencyContact}
+          setEmergencyContact={setEmergencyContact}
+          profilePicture={profilePicture}
+          setProfilePicture={setProfilePicture}
+          billingAddress={billingAddress}
+          setBillingAddress={setBillingAddress}
+          handleCompleteUserCreation={handleCompleteUserCreation}
+        />
       </>
     );
   }
@@ -597,126 +428,23 @@ function SignUp(props) {
   else if (page === "2") {
     return (
       <>
-        <form onSubmit={handleCompleteUserCreation}>
-          <MDBContainer fluid className='h-custom'>
-
-            <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-
-              <MDBCol lg='8'>
-
-                <MDBCard className='my-5 rounded-3'>
-                  <MDBCardImage src={dogBanner}
-                    className='w-100 rounded-top'
-                    alt="dogscenery"
-                    height="450"
-                    style={{ padding: '10px' }}
-                  />
-
-                  <MDBCardBody className='px-5'>
-
-                    <h3 className="mb-4 p-3 pb-md-0 mb-md-3 px-md-2 text-center" class="text-center">
-                      <b>Welcome To PetSociety!</b>
-                    </h3>
-                    <p class="card-text">
-                      <small class="text-muted">One more step before you're done!</small>
-                    </p>
-
-                    <h5>Bank Account Details</h5>
-                    <MDBInput wrapperClass='mb-4'
-                      label='Bank Account Number'
-                      id='inputBankAcc'
-                      type='text'
-                      value={bankAccNum}
-                      onChange={(e) => setBankAccNum(e.target.value)}
-                    />
-
-                    <MDBRow>
-
-                      <MDBCol md='6'>
-                        <MDBInput wrapperClass='mb-4'
-                          label='Bank Name'
-                          id='inputBankName'
-                          type='text'
-                          value={bankName}
-                          onChange={(e) => setBankName(e.target.value)}
-                        />
-                      </MDBCol>
-
-                      <MDBCol md='6'>
-                        <MDBInput wrapperClass='mb-4'
-                          label='Name on Account'
-                          id='inputAccName'
-                          type='text'
-                          value={accName}
-                          onChange={(e) => setAccName(e.target.value)} />
-                      </MDBCol>
-
-
-                    </MDBRow>
-
-
-                    <h5>Credit Card Details</h5>
-                    <MDBRow>
-                      <MDBCol md='12'>
-                        <MDBInput wrapperClass='mb-4'
-                          label='Credit Card Number'
-                          id='inputCcNum'
-                          type='text'
-                          value={ccNum}
-                          onChange={(e) => setCcNum(e.target.value)} />
-                      </MDBCol>
-                    </MDBRow>
-
-                    <MDBRow>
-                      <MDBCol md='5'>
-                        <MDBInput wrapperClass='mb-4'
-                          label='Name on Credit Card'
-                          id='inputCcName'
-                          type='text'
-                          value={ccName}
-                          onChange={(e) => setCcName(e.target.value)} />
-                      </MDBCol>
-
-                      <MDBCol md='4'>
-                        <MDBInput wrapperClass='mb-4'
-                          label='Expiry (MMYYYY)'
-                          id='inputExpDate'
-                          type='text'
-                          maxLength='6'
-                          value={expDate}
-                          onChange={(e) => setExpDate(e.target.value)} />
-
-                      </MDBCol>
-
-                      <MDBCol md='3'>
-                        <MDBInput wrapperClass='mb-4'
-                          label='CVV'
-                          id='inputCvv'
-                          type='text'
-                          value={cvv}
-                          onChange={(e) => setCvv(e.target.value)} />
-                      </MDBCol>
-                    </MDBRow>
-
-                    <MDBRow className='justify-content-center'>
-                      <MDBCol md='3' className='p-2'>
-                        <MDBBtn
-                          style={{ backgroundColor: '#7B69A9' }}
-                          className='w-100 mb-4'
-                          size='lg'
-                          type="submit"
-                          onClick={redirect3}>
-                          Submit
-                        </MDBBtn>
-                      </MDBCol>
-                    </MDBRow>
-
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
-        </form>
+        <BankDetails
+          bankAccNum={bankAccNum}
+          setBankAccNum={setBankAccNum}
+          bankName={bankName}
+          setBankName={setBankName}
+          accName={accName}
+          setAccName={setAccName}
+          ccNum={ccNum}
+          setCcNum={setCcNum}
+          expDate={expDate}
+          setExpDate={setExpDate}
+          ccName={ccName}
+          setCcName={setCcName}
+          cvv={cvv}
+          setCvv={setCvv}
+          handleCompleteUserCreation={handleCompleteUserCreation}
+        />
       </>
     );
   }
@@ -724,64 +452,9 @@ function SignUp(props) {
   else if (page === "3") {
     return (
       <>
-        <div class="py-5 text-center">
-          <div class="container pb-md-5">
-            <div class="row d-flex justify-content-center">
-              <div class="col-lg-10">
-                <h1 class="my-5 display-3 fw-bold ls-tight">
-                  <span>Welcome Onboard!</span>
-                  <br></br>
-                  <span style={{ color: '#7B69A9' }}>Who do you want to be?</span>
-                </h1>
-                <MDBRow>
-                  <MDBCol>
-                    <div class="row">
-                      <div class="col">
-                        <a href="/#/SignUp/1">
-                          <button class="btn btn-primary w-100"
-                            style={{ backgroundColor: '#E4E2F5', padding: '50px 30px' }}
-                            onClick={handleCreationOfParent}>
-                            <img src={ppPicture}
-                              alt="Image"
-                              width="250"
-                              height="250"
-                              style={{ padding: '30px' }}>
-                            </img>
-                            <h2 style={{ color : '#000000'}}><b>I want to be a PetParent</b></h2>
-                          </button>
-                          {isLoading && (
-                            <div className="loading-overlay">
-                              <img src={process.env.PUBLIC_URL + '/loadingAnimation.gif'} alt="Loading" className="loading-gif" />
-                            </div>
-                          )}
-                        </a>
-                      </div>
-                    </div>
-                  </MDBCol>
-
-                  <MDBCol>
-                    <div class="row">
-                      <div class="col">
-                        <button class="btn btn-primary w-100"
-                          style={{ backgroundColor: '#ffffff', padding: '50px 40px' }}
-                          onClick={redirect4}>
-                          <img src={psPicture}
-                            alt="Image"
-                            width="250"
-                            height="250"
-                            style={{ padding: '10px' }}>
-                          </img>
-                          <h2 style={{ color: '#7b69a9' }}>
-                            <b>I want to be a PetSitter</b></h2>
-                        </button>
-                      </div>
-                    </div>
-                  </MDBCol>
-                </MDBRow>
-              </div>
-            </div>
-          </div>
-        </div>
+       <OnboardUserSelection 
+       handleCreationOfParent={handleCreationOfParent}
+       isLoading={isLoading}/> 
       </>
     )
   }
