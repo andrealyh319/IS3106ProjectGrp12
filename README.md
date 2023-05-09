@@ -93,13 +93,15 @@ To run the project on the frontend, run ```npm start``` in the project directory
 
 ## Admin Portal
 
+### Set Up Instructions
+
 Add the PrimeFaces 10.0 library to your IDE (https://www.primefaces.org/downloads/)
 
 Change the ```img.path``` property in ```config.properties``` to ```[PROJECT_BASE_DIRECTORY]/PetSociety-war/web/img```. ```config.properties``` can be found in ```[PROJECT_BASE_DIRECTORY]/PetSociety-war/web```.
 
 ### Running the Admin Portal
 
-Web access for the Admin Portal is not available and can only be ran on your local GlassFish server. 
+Web access for the Admin Portal is not available and can only be ran on your local GlassFish server.
 
 1. To run the project, open the project in NetBeans, then create a MySQL database named ‘PetSocietyDB’. Remember to select ‘mysql.sys@localhost’.
 
@@ -126,4 +128,4 @@ Backend: MySQL, JavaEE
 [andrealyh319](https://github.com/andrealyh319) [callyanne](https://github.com/callyanne) [rrachelangrq](https://github.com/rrachelangrq)
 
 # Current Deployment Branch
-callyanne_testing
+master
