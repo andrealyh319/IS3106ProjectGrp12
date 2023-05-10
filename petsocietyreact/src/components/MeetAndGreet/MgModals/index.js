@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from "reactstrap";
-import Api from "../../helpers/Api";
+import Api from "../../../helpers/Api";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment-timezone';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
-import EditMgForm from "../../components/EditMgForm";
+import EditMgForm from "../EditMgForm";
 import { useNavigate } from "react-router-dom";
 
 function MgModal(props) {

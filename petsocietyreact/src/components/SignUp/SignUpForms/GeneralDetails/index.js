@@ -16,8 +16,8 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import 'react-day-picker/dist/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons';
-import Footer from '../../Footer';
-import '../../../loading.css';
+import Footer from '../../../Components/Footer';
+import '../../../../loading.css';
 
 function GeneralDetails(props) {
     const { firstName,

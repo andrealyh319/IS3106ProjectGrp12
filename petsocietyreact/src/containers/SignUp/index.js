@@ -25,28 +25,18 @@ import 'react-day-picker/dist/style.css';
 import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons';
-import Footer from '../../components/Footer';
 
 import '../../loading.css';
-import GeneralDetails from '../../components/SignUpForms/GeneralDetails';
-import BankDetails from '../../components/SignUpForms/BankDetails';
-import OnboardUserSelection from '../../components/SignUpForms/OnboardUserSelection';
+import GeneralDetails from '../../components/SignUp/SignUpForms/GeneralDetails';
+import BankDetails from '../../components/SignUp/SignUpForms/BankDetails';
+import OnboardUserSelection from '../../components/SignUp/SignUpForms/OnboardUserSelection';
+import ServiceSelection from '../../components/SignUp/SitterSignUp/ServiceSelection';
 
 
 function SignUp(props) {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { page } = useParams();
-
-  const redirect3 = () => {
-    let path = '/SignUp/3';
-    navigate(path);
-  }
-
-  const redirect4 = () => {
-    let path = `/SignUp/Sitter`;
-    navigate(path);
-  }
 
   const redirect5 = () => {
     let path = `/SignUp/ExpForm`;
@@ -463,144 +453,7 @@ function SignUp(props) {
   else if (page === "Sitter") {
     return (
       <>
-        <form onSubmit={handleCompletePetSitterCreation}>
-          <MDBContainer fluid className='h-custom'>
-
-            <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-              <MDBCol col='12' className='m-5'>
-                <MDBCard>
-
-                  <MDBCardBody className='p-0'>
-
-                    <MDBRow>
-                      <MDBCol md='6' className='p-5 bg-gray rounded-start' style={{ backgroundColor: '#e8e6f2' }}>
-                        <h5 className="fw-bold" style={{ color: "black" }}>A few more steps to go!</h5>
-                        <h6 className="fw-bold mb-5" style={{ color: '#afa7eb' }}>To become a Pet Sitter, please fill in the following fields.</h6>
-
-                        <MDBRow>
-                          <h6 className="fw-bold" style={{ color: '#39335c' }}>Select a Service</h6>
-
-                          <Form.Group controlId="serviceSelect">
-                            <Form.Control className="mb-1" as="select" style={{ backgroundColor: "#e8e6f2", color: "black" }}
-                              value={service}
-                              onChange={(e) => setService(e.target.value)}>
-                              <option>Service</option>
-                              <option value="DAYCARE">Daycare</option>
-                              <option value="BOARDING">Boarding</option>
-                              <option value="DROP_IN">Drop-in Visits</option>
-                              <option value="WALKING">Dog Walking</option>
-                            </Form.Control>
-                          </Form.Group>
-                          <h6 style={{ fontSize: 12 }}>Note: Each Pet Sitter can only provide one service.</h6>
-                        </MDBRow>
-
-                        <MDBRow>
-                          <h6 className="fw-bold" style={{ color: '#e8e6f2' }}>.</h6>
-                        </MDBRow>
-
-                        <MDBRow>
-                          <h6 className="fw-bold" style={{ color: '#39335c' }}>Region and Service Address</h6>
-                          <MDBCol md='3'>
-                            <Form.Group controlId="serviceSelect">
-                              <Form.Control as="select" style={{ backgroundColor: "#e8e6f2", color: "black" }}
-                                value={region}
-                                onChange={(e) => setRegion(e.target.value)}>
-                                <option>Region</option>
-                                <option value="NORTH">North</option>
-                                <option value="SOUTH">South</option>
-                                <option value="EAST">East</option>
-                                <option value="WEST">West</option>
-                                <option value="CENTRAL">Central</option>
-                              </Form.Control>
-                            </Form.Group>
-                          </MDBCol>
-                          <MDBCol md='9'>
-                            <MDBInput wrapperClass='mb-4'
-                              labelClass='text-black' label='Service Address' size='lg' id='inputServiceAddress' type='text'
-                              value={serviceAddress}
-                              onChange={(e) => setServiceAddress(e.target.value)} />
-                          </MDBCol>
-                        </MDBRow>
-
-                        <MDBRow>
-                          <h5 className="fw-bold" style={{ color: '#39335c' }}>Preferences</h5>
-                          <h6 className="fw-bold" style={{ color: '#39335c' }}>Pet Preference</h6>
-                          <MDBCol md='6'>
-                            <Form.Group controlId="preferenceSelect" className="mb-3">
-                              <Form.Control as="select" style={{ backgroundColor: "#e8e6f2", color: "black" }}
-                                value={petPreference}
-                                onChange={(e) => setPetPreference(e.target.value)}>
-                                <option>Select</option>
-                                <option value="DOGS ONLY">Dogs Only</option>
-                                <option value="CATS ONLY">Cats Only</option>
-                                <option value="DOGS AND CATS">Dogs and Cats</option>
-                              </Form.Control>
-                            </Form.Group>
-                          </MDBCol>
-                        </MDBRow>
-
-                        <MDBRow>
-                          <h6 className="fw-bold" style={{ color: '#39335c' }}>Max Weight (in kg, per pet)</h6>
-                          <MDBCol md='6'>
-                            <MDBInput wrapperClass='mb-3' label='Max Weight' size='lg' id='inputMaxWeight' type='text'
-                              value={maxWeightPreference}
-                              onChange={(e) => setMaxWeightPreference(e.target.value)} />
-                          </MDBCol>
-                        </MDBRow>
-
-                        <MDBRow>
-                          <MDBCol md='6'>
-                            <h6 className="fw-bold" style={{ color: '#39335c' }}>Max Number of Pets</h6>
-                            <MDBInput wrapperClass='mb-3' label='Max Number' size='lg' id='inputMaxNumPets' type='text'
-                              value={maxNumPets}
-                              onChange={(e) => setMaxNumPets(e.target.value)} />
-                          </MDBCol>
-                        </MDBRow>
-                      </MDBCol>
-
-
-                      <MDBCol md='6' className='p-5 rounded-end' style={{ backgroundColor: '#d1cbf5' }}>
-                        <h4 className="fw-bold mb-5 text-black" style={{ color: '#4835d4' }}>Service Rate and Schedule</h4>
-                        <MDBRow>
-                          <MDBCol md='6'>
-                            <h6 className="fw-bold" style={{ color: '#39335c' }}>Preferred Rate Per Service (SGD)</h6>
-                            <MDBInput wrapperClass='mb-4' labelClass='text-black' label='Rate' size='lg' id='inputRate' type='text'
-                              value={rate}
-                              onChange={(e) => setRate(e.target.value)} />
-                          </MDBCol>
-                        </MDBRow>
-
-                        <MDBRow>
-                          <h6 className="fw-bold" style={{ color: '#39335c' }}>Schedule</h6>
-
-                          <DayPicker
-                            mode="multiple"
-                            min={1}
-                            selected={schedule}
-                            onDayClick={handleDayClick}
-                            footer={footer}
-                          />
-
-                        </MDBRow>
-
-                        <MDBBtn color='light' size='lg'
-                          type="submit"
-                          onClick={redirect5}
-                        >
-                          Next
-                        </MDBBtn>
-
-                      </MDBCol>
-                    </MDBRow>
-
-                  </MDBCardBody>
-                </MDBCard>
-
-              </MDBCol>
-            </MDBRow>
-
-          </MDBContainer>
-        </form>
+        <ServiceSelection />
       </>
     )
   }
