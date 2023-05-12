@@ -22,7 +22,8 @@ import Form from 'react-bootstrap/Form';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import Button from '@mui/material/Button';
-
+import ProfileHeader from '../../components/Profile/ProfileHeader';
+import ServiceCard from '../../components/Profile/ServiceCard';
 
 
 function Profile() {
@@ -34,6 +35,8 @@ function Profile() {
   const [email, setEmail] = useState('name@example.com');
   const [phone, setPhone] = useState('555-123-4567');
   const [birthday, setBirthday] = useState('06/10/1988');
+  const serviceType = useState('Dog Boarding'); // assume cannot change?
+  const [rate, setRate] = useState(45);
 
   function handleUsernameChange(event) {
     setUsername(event.target.value);
@@ -70,7 +73,21 @@ function Profile() {
   // need to link edit pet/add pet here
 
   return (
-    <></>
+    <>
+      <MDBContainer fluid className='h-custom'>
+        <MDBRow className='d-flex justify-content-center align-items-center h-100'>
+          {/*avg rating as attribute in user? or need a method to calc avg rating*/}
+          <ProfileHeader imageUrl="https://i.ibb.co/qd8GPLR/anyapfp.jpg" imageAlt={username} username={username} location={location} averagerating={3} />
+        </MDBRow>
+        <MDBRow>
+          {/*Service type and images?*/}
+          <div className='col-4'>
+            <ServiceCard serviceType={serviceType} rate={rate} />
+          </div>
+          Images here?
+        </MDBRow>
+      </MDBContainer>
+    </>
   )
 }
     

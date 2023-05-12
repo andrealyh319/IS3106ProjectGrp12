@@ -10,7 +10,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.json.bind.annotation.JsonbTransient;
-import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +22,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
@@ -65,9 +63,7 @@ public class User implements Serializable  {
     @Size(min = 8)
     private String emergencyContact;
     @Column(nullable = true)
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
-    private byte [] profilePicture;
+    private String profilePicture;
     @Column(nullable = false)
     private String billingAddress;
     @Column(nullable = false)
@@ -113,7 +109,7 @@ public class User implements Serializable  {
         this.daysDisabled = 0;
     }
 
-    public User(String firstName, String lastName, String username, String contactNum, String email, String password, int age, String emergencyContact, byte[] profilePicture, String billingAddress, UserStatusEnum status) {
+    public User(String firstName, String lastName, String username, String contactNum, String email, String password, int age, String emergencyContact, String profilePicture, String billingAddress, UserStatusEnum status) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -291,11 +287,11 @@ public class User implements Serializable  {
         this.cc = cc;
     }
 
-    public byte[] getProfilePicture() {
+    public String getProfilePicture() {
         return profilePicture;
     }
     
-    public void setProfilePicture(byte[] profilePicture) {
+    public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
     }
 

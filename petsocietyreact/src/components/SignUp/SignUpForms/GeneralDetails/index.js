@@ -42,6 +42,20 @@ function GeneralDetails(props) {
         setBillingAddress,
         handleCompleteUserCreation } = props;
 
+        const onImageChange = (event) => {
+            if (event.target.files && event.target.files[0]) {
+                let files = document.getElementById('customFile').files;
+                let file = files[0]
+                //console.log(file);
+                if (file.size > 32000000) { // image.size > 32MB
+                    // can also display error message
+                    event.preventDefault();
+                    return;
+                }
+                setProfilePicture(file);
+            }
+        }
+
     return (
         <>
             <div style={{ margin: '20px' }}>
@@ -124,8 +138,8 @@ function GeneralDetails(props) {
                                                     <input type="file"
                                                         className="form-control"
                                                         id="customFile"
-                                                        value={profilePicture}
-                                                        onChange={(e) => setProfilePicture(e.target.value)} />
+                                                        accept='image/*'
+                                                        onChange={onImageChange} />
                                                 </MDBCol>
                                             </MDBRow>
 

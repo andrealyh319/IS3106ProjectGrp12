@@ -219,6 +219,19 @@ function SignUp(props) {
     console.log(user);
     console.log(petParent);
     setIsLoading(true);
+    let data = new FormData();
+    let image = petParent.profilePicture;
+    data.append("image", image);
+    //console.log(data.get("image"));
+    if (image !== null) { // not sure if profilePicture is initially null if unset TT
+      Api.uploadImage( data ).then((response) => {
+        //console.log(response);
+        return response.json();
+      }).then((response) => {
+        petParent.profilePicture = response.data.image.url; // supposed to set pp to the url generated
+        console.log(petParent.profilePicture);
+      }).catch(err => console.log(err));
+    }
     Api.createNewParent(petParent)
       .then((data) => {
         navigate("/CreatePet");

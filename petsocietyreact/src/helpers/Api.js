@@ -14,6 +14,15 @@ const Api = {
         });
     }, */
 
+    // post image to host,, data is formdata w image: A binary file, base64 data, or a URL for an image. (up to 32 MB)
+    uploadImage(data) {
+        console.log(data);
+        return fetch(`https://api.imgbb.com/1/upload?key=9fbbdd51ad93c7a83afa9ad613cd5536`, {
+            method: "POST",
+            body: data,
+        });
+    }, // for imagelink: data.image.url
+
     // creation of petParent
     createNewParent(data) {
         return fetch(`${SERVER_PREFIX}/users/petparent`, {
@@ -55,7 +64,7 @@ const Api = {
         return fetch(`${SERVER_PREFIX}/users/userRole`, {
             headers: {
                 Accept: "application/json",
-                "Content-Type": "application/json",
+                "Content-Type": "application/json;",
             },
             method: "POST",
             body: JSON.stringify(data),
