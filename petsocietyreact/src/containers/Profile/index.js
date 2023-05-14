@@ -33,6 +33,7 @@ function Profile() {
   const [orgName, setOrgName] = useState('Start Bootstrap');
   const [location, setLocation] = useState('San Francisco, CA');
   const [email, setEmail] = useState('name@example.com');
+  const [profilePicture, setProfilePicture] = useState();
   const [phone, setPhone] = useState('555-123-4567');
   const [birthday, setBirthday] = useState('06/10/1988');
   const serviceType = useState('Dog Boarding'); // assume cannot change?
@@ -77,7 +78,7 @@ function Profile() {
       <MDBContainer fluid className='h-custom'>
         <MDBRow className='d-flex justify-content-center align-items-center h-100'>
           {/*avg rating as attribute in user? or need a method to calc avg rating*/}
-          <ProfileHeader imageUrl="https://i.ibb.co/qd8GPLR/anyapfp.jpg" imageAlt={username} username={username} location={location} averagerating={3} />
+          <ProfileHeader imageUrl={profilePicture} imageAlt={username} username={username} location={location} averagerating={3} />
         </MDBRow>
         <MDBRow>
           {/*Service type and images?*/}

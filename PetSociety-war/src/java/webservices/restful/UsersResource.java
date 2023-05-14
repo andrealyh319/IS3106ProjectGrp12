@@ -88,6 +88,9 @@ public class UsersResource {
     public PetParent createNewPetParent(PetParent p) {
         p.setPets(new ArrayList<Pet>());
         p.setStatus(UserStatusEnum.APPROVED);
+        if (p.getProfilePicture() == null || p.getProfilePicture().equals("")) {
+            p.setProfilePicture("https://i.ibb.co/k6QfDY3/noprofilepic.png");
+        }
         petParentSessionBeanLocal.createNewParent(p);
         return p;
     }
@@ -103,7 +106,9 @@ public class UsersResource {
         // Convert enums
         //petSitter.setRegion(RegionEnum.valueOf(@FormParam("region") region));
         //petSitter.setService(ServiceEnum.valueOf(@FormParam("service")));
-
+        if (petSitter.getProfilePicture() == null || petSitter.getProfilePicture().equals("")) {
+            petSitter.setProfilePicture("https://i.ibb.co/k6QfDY3/noprofilepic.png");
+        }
         petSitterSessionBeanLocal.createNewSitter(petSitter);
         return petSitter;
     }
